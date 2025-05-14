@@ -1,0 +1,12 @@
+.background{
+    -fx-background-color: #6C0C0A;
+}
+
+.text{
+    -fx-font-size: 24px;
+    -fx-fill: #DC9F3E;
+}
+.text2{
+    -fx-font-size: 24px;
+    -fx-fill: #DC9F3E;
+}
