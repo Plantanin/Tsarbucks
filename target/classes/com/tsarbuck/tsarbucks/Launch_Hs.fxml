@@ -1,16 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
-
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.tsarbuck.tsarbucks.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<?import javafx.scene.text.Text?>
+<?import javafx.geometry.Insets?>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<BorderPane styleClass="background" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.tsarbuck.tsarbucks.HelloController"
+            stylesheets="@style.css">
+
+    <center>
+        <VBox alignment="CENTER" spacing="20.0">
+            <Label>
+                <graphic>
+                    <ImageView fitWidth="100" preserveRatio="true">
+                        <Image url="@../../../images/tsarbucks_logo.png" />
+                    </ImageView>
+                </graphic>
+            </Label>
+            <Text styleClass="text">Bienvenue !</Text>
+        </VBox>
+    </center>
+
+    <bottom>
+        <VBox alignment="CENTER">
+            <Label styleClass="text2" text="Cliquez pour commander">
+                <VBox.margin>
+                    <Insets bottom="20" />
+                </VBox.margin>
+            </Label>
+        </VBox>
+    </bottom>
+
+</BorderPane>
