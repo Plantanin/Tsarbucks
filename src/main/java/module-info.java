@@ -6,4 +6,6 @@ module com.tsarbuck.tsarbucks {
 
     opens com.tsarbuck.tsarbucks to javafx.fxml;
     exports com.tsarbuck.tsarbucks;
+    exports com.tsarbuck.tsarbucks.controllers;
+    opens com.tsarbuck.tsarbucks.controllers to javafx.fxml;
 }

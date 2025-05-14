@@ -10,7 +10,7 @@
 <?import javafx.geometry.Insets?>
 
 <BorderPane styleClass="background" xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.tsarbuck.tsarbucks.HelloController"
+            fx:controller="com.tsarbuck.tsarbucks.controllers.HelloController"
             stylesheets="@style.css">
 
     <center>

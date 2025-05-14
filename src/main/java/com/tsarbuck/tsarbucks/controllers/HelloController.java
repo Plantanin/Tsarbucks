@@ -1,4 +1,4 @@
-package com.tsarbuck.tsarbucks;
+package com.tsarbuck.tsarbucks.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
