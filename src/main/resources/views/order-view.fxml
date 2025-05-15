@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.tsarbuck.tsarbucks.controllers.CommandeController"
+      alignment="CENTER" spacing="20"
+      stylesheets="@../style.css"
+      styleClass="background"
+      prefWidth="600" prefHeight="400">
+
+    <ImageView fitWidth="100" preserveRatio="true">
+        <Image url="@../images/tsarbucks_logo.png" />
+    </ImageView>
+
+    <Label fx:id="coffeeNameLabel" styleClass="text" />
+
+    <Button text="🏠 Retour à l'accueil" onAction="#goToLaunch" />
+</VBox>

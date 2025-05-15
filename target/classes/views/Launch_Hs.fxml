@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<<<<<<< HEAD
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.Label?>
@@ -37,3 +38,46 @@
     </bottom>
 
 </BorderPane>
+=======
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.tsarbuck.tsarbucks.controllers.LaunchController"
+           stylesheets="@/css/style.css"
+           styleClass="background"
+           prefWidth="600" prefHeight="400">
+
+    <Button fx:id="launchButton"
+            onAction="#goToMenu"
+            style="-fx-background-color: transparent; -fx-border-color: transparent;"
+            prefWidth="600" prefHeight="400">
+
+        <BorderPane>
+
+            <center>
+                <VBox alignment="CENTER" spacing="20.0">
+                    <ImageView fitWidth="100" preserveRatio="true">
+                        <Image url="@../images/tsarbucks_logo.png" />
+                    </ImageView>
+                    <Text styleClass="text">Bienvenue !</Text>
+                </VBox>
+            </center>
+
+            <bottom>
+                <VBox alignment="CENTER">
+                    <Label styleClass="text2" text="Cliquez pour commander">
+                        <VBox.margin>
+                            <Insets bottom="20" />
+                        </VBox.margin>
+                    </Label>
+                </VBox>
+            </bottom>
+
+        </BorderPane>
+    </Button>
+</StackPane>
+>>>>>>> e71451b (creation de la commande)

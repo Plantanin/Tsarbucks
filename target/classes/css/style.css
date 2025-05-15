@@ -2,14 +2,19 @@
     -fx-background-color: #6C0C0A;
 }
 
+<<<<<<< HEAD
 
 .text3{
+=======
+.text{
+>>>>>>> e71451b (creation de la commande)
     -fx-font-size: 24px;
     -fx-fill: #DC9F3E;
 }
 .text2{
     -fx-font-size: 24px;
     -fx-fill: #DC9F3E;
+<<<<<<< HEAD
 }
 
 .backgrounddore {
@@ -83,4 +88,6 @@
     -fx-font-weight: bold;
     -fx-padding: 20 0 10 0;
     -fx-alignment: center;
+=======
+>>>>>>> e71451b (creation de la commande)
 }
