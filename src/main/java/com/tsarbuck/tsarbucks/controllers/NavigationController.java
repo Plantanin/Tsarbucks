@@ -17,7 +17,7 @@ public class NavigationController {
     }
 
     public static void switchScene(String fxmlFile, MouseEvent event) {
-        System.out.println("next scene");
+        System.out.println(fxmlFile);
         Node source = (Node) event.getSource();
         Stage stage = (Stage) source.getScene().getWindow();
         loadScene(stage, fxmlFile);
@@ -26,7 +26,7 @@ public class NavigationController {
     private static void loadScene(Stage stage, String fxmlFile) {
         try {
             Parent root = FXMLLoader.load(NavigationController.class.getResource("/views/" + fxmlFile));
-            stage.setScene(new Scene(root, 400, 300));
+            stage.setScene(new Scene(root, 400, 700));
         } catch (IOException e) {
             e.printStackTrace();
         }

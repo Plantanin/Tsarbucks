@@ -45,10 +45,10 @@
     -fx-background-color: #E6C471;
     -fx-text-fill: white;
     -fx-background-radius: 30;
-    -fx-padding: 8 16;         /* espace autour du texte */
+    -fx-padding: 8 16;
     -fx-font-weight: bold;
     -fx-font-size: 14px;
-    -fx-min-width: 100px;      /* largeur minimale pour éviter la troncature */
+    -fx-min-width: 100px;
     -fx-wrap-text: true;
     -fx-alignment: center;
 }

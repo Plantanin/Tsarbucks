@@ -41,8 +41,8 @@
                     <Image url="@../images/coffee_espresso.png"/>
                 </ImageView>
                 <HBox spacing="8" alignment="CENTER">
-                    <Button fx:id="btnAjouterEspresso" text="Ajouter" styleClass="btn-round"/>
-                    <Button fx:id="btnRetirerEspresso" text="Retirer" styleClass="btn-round"/>
+                    <Button fx:id="btnAjouterEspresso" text="Xml" styleClass="btn-round"/>
+                    <Button fx:id="btnRetirerEspresso" text="Xml" styleClass="btn-round"/>
                 </HBox>
             </VBox>
 
@@ -52,8 +52,8 @@
                     <Image url="@../images/coffee_cappuccino.png"/>
                 </ImageView>
                 <HBox spacing="8" alignment="CENTER">
-                    <Button fx:id="btnAjouterCapuccino" text="Ajouter" styleClass="btn-round"/>
-                    <Button fx:id="btnRetirerCapuccino" text="Retirer" styleClass="btn-round"/>
+                    <Button fx:id="btnAjouterCapuccino" text="Xml" styleClass="btn-round"/>
+                    <Button fx:id="btnRetirerCapuccino" text="Xml" styleClass="btn-round"/>
                 </HBox>
             </VBox>
 

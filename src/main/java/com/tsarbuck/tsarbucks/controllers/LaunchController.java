@@ -10,7 +10,7 @@ public class LaunchController {
     @FXML
     public void initialize() {
         rootPane.setOnMouseClicked(event -> {
-            NavigationController.switchScene("next_view.fxml", event);
+            NavigationController.switchScene("ChoixBoisson.fxml", event);
         });
     }
 }
