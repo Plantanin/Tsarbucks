@@ -7,7 +7,7 @@
 <?import javafx.geometry.Insets?>
 
 <BorderPane xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.tsarbuck.tsarbucks.ChoixBoissonController"
+            fx:controller="com.tsarbuck.tsarbucks.controllers.MenuController"
             stylesheets="@../css/style.css"
             styleClass="backgrounddore"
             prefWidth="405" prefHeight="798">
@@ -35,8 +35,8 @@
                 </ImageView>
                 <!-- bouton d'ajout ou de retrait -->
                 <HBox spacing="8" alignment="CENTER">
-                    <Button fx:id="btnAjouterLatte" text="Xml" styleClass="btn-round"/>
-                    <Button fx:id="btnRetirerLatte" text="Xml" styleClass="btn-round"/>
+                    <Button fx:id="btnAjouterLatte" onAction="#handleAjouterLatte" text="M" styleClass="btn-round"/>
+                    <Button fx:id="btnRetirerLatte" onAction="#handleAjouterLatte" text="L" styleClass="btn-round"/>
                 </HBox>
             </VBox>
 
@@ -47,8 +47,8 @@
                     <Image url="@../images/coffee_espresso.png"/>
                 </ImageView>
                 <HBox spacing="8" alignment="CENTER">
-                    <Button fx:id="btnAjouterEspresso" text="Xml" styleClass="btn-round"/>
-                    <Button fx:id="btnRetirerEspresso" text="Xml" styleClass="btn-round"/>
+                    <Button fx:id="btnAjouterEspresso" onAction="#handleAjouterExpresso" text="M" styleClass="btn-round"/>
+                    <Button fx:id="btnRetirerEspresso" onAction="#handleAjouterExpresso" text="L" styleClass="btn-round"/>
                 </HBox>
             </VBox>
 
@@ -59,8 +59,8 @@
                     <Image url="@../images/coffee_cappuccino.png"/>
                 </ImageView>
                 <HBox spacing="8" alignment="CENTER">
-                    <Button fx:id="btnAjouterCapuccino" text="Xml" styleClass="btn-round"/>
-                    <Button fx:id="btnRetirerCapuccino" text="Xml" styleClass="btn-round"/>
+                    <Button fx:id="btnAjouterCapuccino" onAction="#handleAjouterCappuccino" text="M" styleClass="btn-round"/>
+                    <Button fx:id="btnRetirerCapuccino" onAction="#handleAjouterCappuccino" text="L" styleClass="btn-round"/>
                 </HBox>
             </VBox>
 
@@ -73,7 +73,7 @@
             <padding>
                 <Insets top="8" right="10" bottom="10" left="10"/>
             </padding>
-            <Button text="Abandon" styleClass="btn-red"/>
+            <Button text="Abandon" styleClass="btn-red" onAction="#goToLaunch"/>
             <ImageView fitWidth="60" preserveRatio="true">
                 <Image url="@../images/tsarbucks_logo.png"/>
             </ImageView>

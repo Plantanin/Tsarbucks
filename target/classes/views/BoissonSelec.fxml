@@ -8,10 +8,9 @@
 <?import javafx.scene.control.Slider?>
 <?import javafx.geometry.Insets?>
 
-
-
 <BorderPane xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.tsarbuck.tsarbucks.BoissonSelecController"
+            fx:controller="com.tsarbuck.tsarbucks.controllers.BoissonSelectController"
+
             stylesheets="@../css/style.css"
             prefWidth="405" prefHeight="798"
             styleClass="backgrounddore">
@@ -29,7 +28,6 @@
         </VBox>
     </top>
 
-    <!--Element centrale qui affiche la carte  -->
     <center>
         <VBox spacing="15" alignment="CENTER">
             <VBox styleClass="card" spacing="10" alignment="CENTER">
@@ -40,7 +38,6 @@
                     <Text styleClass="text">Caffé Capuccino</Text>
                 </HBox>
 
-                <!--contener pour afficher les bouton ajouter ou retirer -->
                 <HBox spacing="20" alignment="CENTER">
                     <Button fx:id="btnAjouter" text="Ajouter" styleClass="btn-round" />
                     <Button fx:id="btnRetirer" text="Retirer" styleClass="btn-round" />
@@ -72,7 +69,6 @@
         </VBox>
     </center>
 
-    <!--Footer qui affiche les bouton de navigation -->
     <bottom>
         <HBox alignment="CENTER" spacing="30">
             <padding>
