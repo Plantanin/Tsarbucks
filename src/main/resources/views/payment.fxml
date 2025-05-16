@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.geometry.Insets?>
+
+<?import javafx.scene.control.Button?>
+<BorderPane style="-fx-background-color: #D9A75F;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tsarbuck.tsarbucks.controllers.PaymentController" prefWidth="440" prefHeight="956">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20" />
+    </padding>
+
+    <center>
+        <VBox fx:id="rootVBox" alignment="CENTER" spacing="0" maxWidth="440" maxHeight="956">
+
+            <!-- Boîte blanche (icône) -->
+            <Pane style="-fx-background-color: white; -fx-background-radius: 10 10 0 0;" prefHeight="422" prefWidth="374">
+                <VBox alignment="CENTER" spacing="10" prefHeight="422" prefWidth="374">
+                    <Label fx:id="beveragePrice" text="" visible="false" managed="false" style="-fx-font-size: 64px; -fx-text-fill: black;" wrapText="true" alignment="CENTER" textAlignment="CENTER" />
+                    <ImageView fx:id="checkIcon" visible="false" managed="false" fitHeight="100" fitWidth="100" preserveRatio="true" />
+                    <Label fx:id="moneyLeft" text="" visible="false" managed="false" style="-fx-font-size: 18px; -fx-text-fill: black;" wrapText="true" alignment="CENTER" textAlignment="CENTER"/>
+                </VBox>
+            </Pane>
+
+            <!-- Boîte rouge (message) -->
+            <Pane style="-fx-background-color: #8B2222; -fx-background-radius: 0 0 10 10;" prefHeight="374" prefWidth="400">
+                <VBox alignment="CENTER" prefHeight="374" prefWidth="400">
+                    <Label fx:id="messageLabel" text="Texte par défaut" style="-fx-font-size: 24px; -fx-text-fill: white;" wrapText="true" alignment="CENTER" textAlignment="CENTER" />
+                    <VBox fx:id="paymentButtons" visible="true" managed="true" alignment="CENTER" spacing="20" style="-fx-padding: 20">
+                        <Button fx:id="twoEurosButton" text="2€" minWidth="200"
+                                style="-fx-background-color: #D9A75F; -fx-background-radius: 30; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px;" />
+                        <Button fx:id="oneEuroButton" text="1€" minWidth="200"
+                                style="-fx-background-color: #D9A75F; -fx-background-radius: 30; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px;" />
+                        <Button fx:id="fiftyCentsButton" text="0.50€" minWidth="200"
+                                style="-fx-background-color: #D9A75F; -fx-background-radius: 30; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px;" />
+                        <Button fx:id="tenCentsButton" text="0.10€" minWidth="200"
+                                style="-fx-background-color: #D9A75F; -fx-background-radius: 30; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px;" />
+                        <Button fx:id="cardPaymentBtn" text="Payer par carte" minWidth="200"
+                                style="-fx-background-color: #D9A75F; -fx-background-radius: 30; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px;" />
+                    </VBox>
+                </VBox>
+            </Pane>
+        </VBox>
+    </center>
+</BorderPane>

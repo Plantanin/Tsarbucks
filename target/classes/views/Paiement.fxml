@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.tsarbuck.tsarbucks.controllers.PaiementController"
+      >
+
+    <!-- Label qui affiche le montant inséré -->
+    <Label fx:id="montantActuelLabel" text="Montant: 0.00 €" style="-fx-font-size: 18px;"/>
+
+    <!-- Label qui affiche l'état du paiement -->
+    <Label fx:id="statePaymentLabel" text="Insérez votre paiement" style="-fx-font-size: 16px;"/>
+
+    <!-- Boutons pour insérer des montants -->
+    <Button fx:id="twoEurosButton" text="Ajouter 2€" minWidth="200"/>
+    <Button fx:id="oneEuroButton" text="Ajouter 1€" minWidth="200"/>
+    <Button fx:id="fiftyCentsButton" text="Ajouter 0.50€" minWidth="200"/>
+    <Button fx:id="tenCentsButton" text="Ajouter 0.10€" minWidth="200"/>
+
+    <!-- Bouton paiement par carte (non implémenté dans ton contrôleur actuel mais prévu) -->
+    <Button fx:id="cardPaymentBtn" text="Payer par carte" minWidth="200"/>
+
+</VBox>
