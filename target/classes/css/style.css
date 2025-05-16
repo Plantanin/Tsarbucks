@@ -63,7 +63,6 @@
 
 .slider-style .axis {
     -fx-tick-label-fill: white;
-    -fx-tick-label-font: 100px;
 }
 
 .slider-style {

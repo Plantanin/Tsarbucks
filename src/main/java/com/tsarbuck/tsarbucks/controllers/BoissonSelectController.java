@@ -9,6 +9,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -16,7 +17,7 @@ import java.io.IOException;
 public class BoissonSelectController {
 
     @FXML
-    private Label labelBoisson;
+    private Text labelNomBoisson;
 
     @FXML
     private Label labelTaille;
@@ -25,6 +26,7 @@ public class BoissonSelectController {
 
     public void setCommande(Commande commande) {
         this.commande = commande;
+        updateBoissonView();
     }
 
     @FXML
@@ -50,14 +52,11 @@ public class BoissonSelectController {
     @FXML
     private void goToNextScene(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/Launch_hS.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/payment.fxml"));
             Parent root = loader.load();
 
-            System.out.println(commande);
-            System.out.println(commande.getBoisson());
-            System.out.println(commande.getTaille());
-            System.out.println(commande.getPrix());
-
+            PaymentController controller = loader.getController();
+            controller.setCommandePayment(commande);
 
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root, 400, 700));
@@ -78,6 +77,11 @@ public class BoissonSelectController {
             stage.show();
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+    private void updateBoissonView() {
+        if (commande != null && commande.getBoisson() != null) {
+            labelNomBoisson.setText("Caffé " + commande.getBoisson().getName());
         }
     }
 }

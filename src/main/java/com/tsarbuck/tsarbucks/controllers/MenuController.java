@@ -12,6 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.control.Button;
 import javafx.scene.Parent;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -105,7 +106,7 @@ public class MenuController {
 
 
     @FXML
-    private void handleAjouterExpresso(ActionEvent event) {
+    private void handleAjouterExpresso(MouseEvent event) {
         commande = new Commande(expresso);
 
         try {
@@ -128,7 +129,7 @@ public class MenuController {
     }
 
     @FXML
-    private void handleAjouterLatte(ActionEvent event) {
+    private void handleAjouterLatte(MouseEvent event) {
         //NavigationController.switchScene("BoissonSelec.fxml", event);
         commande = new Commande(latte);
 
@@ -140,7 +141,7 @@ public class MenuController {
             BoissonSelectController controller = loader.getController();
             controller.setCommande(commande);
 
-            System.out.println(commande);
+            System.out.println(commande.getBoisson().getName());
 
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root, 400, 700));
@@ -152,7 +153,7 @@ public class MenuController {
     }
 
     @FXML
-    private void handleAjouterCappuccino(ActionEvent event) {
+    private void handleAjouterCappuccino(MouseEvent event) {
         commande = new Commande(cappuccino);
 
         try {

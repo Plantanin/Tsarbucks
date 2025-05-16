@@ -28,39 +28,39 @@
             </padding>
 
             <!--Carte du caffé Laté -->
-            <VBox styleClass="card" alignment="CENTER" spacing="6" prefWidth="160">
+            <VBox styleClass="card" alignment="CENTER" spacing="6" prefWidth="160" fx:id="rootCard" onMouseClicked="#handleAjouterLatte">
                 <Label text="Caffé Laté" styleClass="text"/>
                 <ImageView fitWidth="35" preserveRatio="true">
                     <Image url="@../images/coffee_latte.png"/>
                 </ImageView>
                 <!-- bouton d'ajout ou de retrait -->
                 <HBox spacing="8" alignment="CENTER">
-                    <Button fx:id="btnAjouterLatte" onAction="#handleAjouterLatte" text="M" styleClass="btn-round"/>
-                    <Button fx:id="btnRetirerLatte" onAction="#handleAjouterLatte" text="L" styleClass="btn-round"/>
+                    <Button fx:id="btnAjouterLatte" text="M" styleClass="btn-round"/>
+                    <Button fx:id="btnRetirerLatte" text="L" styleClass="btn-round"/>
                 </HBox>
             </VBox>
 
             <!--Carte expresso  -->
-            <VBox styleClass="card" alignment="CENTER" spacing="6" prefWidth="160">
+            <VBox styleClass="card" alignment="CENTER" spacing="6" prefWidth="160" onMouseClicked="#handleAjouterExpresso">
                 <Label text="Espresso" styleClass="text"/>
                 <ImageView fitWidth="35" preserveRatio="true">
                     <Image url="@../images/coffee_espresso.png"/>
                 </ImageView>
                 <HBox spacing="8" alignment="CENTER">
-                    <Button fx:id="btnAjouterEspresso" onAction="#handleAjouterExpresso" text="M" styleClass="btn-round"/>
-                    <Button fx:id="btnRetirerEspresso" onAction="#handleAjouterExpresso" text="L" styleClass="btn-round"/>
+                    <Button fx:id="btnAjouterEspresso" text="M" styleClass="btn-round"/>
+                    <Button fx:id="btnRetirerEspresso" text="L" styleClass="btn-round"/>
                 </HBox>
             </VBox>
 
             <!--Carte Capuccino -->
-            <VBox styleClass="card" alignment="CENTER" spacing="6" prefWidth="160">
+            <VBox styleClass="card" alignment="CENTER" spacing="6" prefWidth="160" onMouseClicked="#handleAjouterCappuccino">
                 <Label text="Caffé Capuccino" styleClass="text"/>
                 <ImageView fitWidth="35" preserveRatio="true">
                     <Image url="@../images/coffee_cappuccino.png"/>
                 </ImageView>
                 <HBox spacing="8" alignment="CENTER">
-                    <Button fx:id="btnAjouterCapuccino" onAction="#handleAjouterCappuccino" text="M" styleClass="btn-round"/>
-                    <Button fx:id="btnRetirerCapuccino" onAction="#handleAjouterCappuccino" text="L" styleClass="btn-round"/>
+                    <Button fx:id="btnAjouterCapuccino" text="M" styleClass="btn-round"/>
+                    <Button fx:id="btnRetirerCapuccino" text="L" styleClass="btn-round"/>
                 </HBox>
             </VBox>
 
