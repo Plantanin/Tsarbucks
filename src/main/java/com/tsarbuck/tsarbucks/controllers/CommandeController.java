@@ -27,7 +27,7 @@ public class CommandeController {
     @FXML
     private void goToLaunch() {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/launch_Hs.fxml"));  // Corrige ici si nécessaire le nom exact de ton fichier FXML
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Launch_Hs.fxml"));  // Corrige ici si nécessaire le nom exact de ton fichier FXML
             Stage stage = (Stage) coffeeNameLabel.getScene().getWindow();
             stage.setScene(new Scene(loader.load(), 600, 400));
         } catch (IOException e) {

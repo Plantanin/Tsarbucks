@@ -9,8 +9,8 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.geometry.Insets?>
 
-<BorderPane styleClass="background" xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.tsarbuck.tsarbucks.HelloController"
+<BorderPane fx:id="rootPane" styleClass="background" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.tsarbuck.tsarbucks.controllers.LaunchController"
             stylesheets="@../css/style.css">
 
     <center>

@@ -9,7 +9,8 @@
 <?import javafx.geometry.Insets?>
 
 <BorderPane xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.tsarbuck.tsarbucks.BoissonSelecController"
+            fx:controller="com.tsarbuck.tsarbucks.controllers.MenuController"
+
             stylesheets="@../css/style.css"
             prefWidth="405" prefHeight="798"
             styleClass="backgrounddore">
@@ -32,19 +33,18 @@
                     <ImageView fitWidth="40" preserveRatio="true">
                         <Image url="@../images/coffee_cappuccino.png" />
                     </ImageView>
-                    <Text styleClass="text">Caffé Capuccino</Text>
+                    <Label fx:id="labelNomBoisson" />
                 </HBox>
 
                 <HBox spacing="20" alignment="CENTER">
-                    <Button fx:id="btnAjouter" text="Ajouter" styleClass="btn-round" />
-                    <Button fx:id="btnRetirer" text="Retirer" styleClass="btn-round" />
+                    <Button fx:id="btnTailleM" text="M" styleClass="btn-round" onAction="#setCommandeTailleM"/>
                 </HBox>
 
-                <Label fx:id="labelSucre" text="Sucre Ajouté :" styleClass="label" />
+                <Label fx:id="labelSucreBoisson" text="Sucre Ajouté :" styleClass="label" />
                 <Slider fx:id="sliderSucre" styleClass="slider-style" prefWidth="200"
                         min="0" max="1" value="0.4" blockIncrement="0.1" />
 
-                <Label fx:id="labelLait" text="Lait Ajouté :" styleClass="label" />
+                <Label fx:id="labelLaitBoisson" text="Lait Ajouté :" styleClass="label" />
                 <Slider fx:id="sliderLait" styleClass="slider-style" prefWidth="200"
                         min="0" max="1" value="0.6" blockIncrement="0.1" />
             </VBox>

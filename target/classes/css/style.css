@@ -2,19 +2,14 @@
     -fx-background-color: #6C0C0A;
 }
 
-<<<<<<< HEAD
 
 .text3{
-=======
-.text{
->>>>>>> e71451b (creation de la commande)
     -fx-font-size: 24px;
     -fx-fill: #DC9F3E;
 }
 .text2{
     -fx-font-size: 24px;
     -fx-fill: #DC9F3E;
-<<<<<<< HEAD
 }
 
 .backgrounddore {
@@ -50,10 +45,10 @@
     -fx-background-color: #E6C471;
     -fx-text-fill: white;
     -fx-background-radius: 30;
-    -fx-padding: 8 16;         /* espace autour du texte */
+    -fx-padding: 8 16;
     -fx-font-weight: bold;
     -fx-font-size: 14px;
-    -fx-min-width: 100px;      /* largeur minimale pour éviter la troncature */
+    -fx-min-width: 100px;
     -fx-wrap-text: true;
     -fx-alignment: center;
 }
@@ -88,6 +83,4 @@
     -fx-font-weight: bold;
     -fx-padding: 20 0 10 0;
     -fx-alignment: center;
-=======
->>>>>>> e71451b (creation de la commande)
 }

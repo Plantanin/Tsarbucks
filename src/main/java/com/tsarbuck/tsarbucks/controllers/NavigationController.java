@@ -26,7 +26,7 @@ public class NavigationController {
     private static void loadScene(Stage stage, String fxmlFile) {
         try {
             Parent root = FXMLLoader.load(NavigationController.class.getResource("/views/" + fxmlFile));
-            stage.setScene(new Scene(root, 400, 300));
+            stage.setScene(new Scene(root, 400, 700));
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -7,7 +7,7 @@
 <?import javafx.geometry.Insets?>
 
 <BorderPane xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.tsarbuck.tsarbucks.ChoixBoissonController"
+            fx:controller="com.tsarbuck.tsarbucks.controllers.MenuController"
             stylesheets="@../css/style.css"
             styleClass="backgrounddore"
             prefWidth="405" prefHeight="798">
@@ -30,7 +30,7 @@
                     <Image url="@../images/coffee_latte.png"/>
                 </ImageView>
                 <HBox spacing="8" alignment="CENTER">
-                    <Button fx:id="btnAjouterLatte" text="Xml" styleClass="btn-round"/>
+                    <Button fx:id="btnAjouterLatte" onAction="#handleAjouterLatte" text="Xml" styleClass="btn-round"/>
                     <Button fx:id="btnRetirerLatte" text="Xml" styleClass="btn-round"/>
                 </HBox>
             </VBox>
@@ -41,8 +41,8 @@
                     <Image url="@../images/coffee_espresso.png"/>
                 </ImageView>
                 <HBox spacing="8" alignment="CENTER">
-                    <Button fx:id="btnAjouterEspresso" text="Xml" styleClass="btn-round"/>
-                    <Button fx:id="btnRetirerEspresso" text="Xml" styleClass="btn-round"/>
+                    <Button fx:id="btnAjouterEspresso" onAction="#goToNextScene"  text="M" styleClass="btn-round"/>
+                    <Button fx:id="btnRetirerEspresso" text="L" styleClass="btn-round"/>
                 </HBox>
             </VBox>
 
@@ -52,8 +52,8 @@
                     <Image url="@../images/coffee_cappuccino.png"/>
                 </ImageView>
                 <HBox spacing="8" alignment="CENTER">
-                    <Button fx:id="btnAjouterCapuccino" text="Xml" styleClass="btn-round"/>
-                    <Button fx:id="btnRetirerCapuccino" text="Xml" styleClass="btn-round"/>
+                    <Button fx:id="btnAjouterCapuccino" onAction="#goToNextScene" text="M" styleClass="btn-round"/>
+                    <Button fx:id="btnRetirerCapuccino" text="L" styleClass="btn-round"/>
                 </HBox>
             </VBox>
 
