@@ -44,8 +44,6 @@ public class PaymentController {
     @FXML
     private Label moneyLeft;
 
-    // Prix fixe à payer
-    private final float price = 8.30F;
     // Montant inséré par l'utilisateur
     private float amount = 0.0F;
 
@@ -61,21 +59,18 @@ public class PaymentController {
         oneEuroButton.setOnAction(event -> ajouterMontant(1.0F));
         fiftyCentsButton.setOnAction(event -> ajouterMontant(0.5F));
         tenCentsButton.setOnAction(event -> ajouterMontant(0.1F));
-        cardPaymentBtn.setOnAction(event -> ajouterMontant(price));
+        cardPaymentBtn.setOnAction(event -> ajouterMontant(commande.getPrix()));
         cardPaymentFailedBtn.setOnAction(event -> failedPayment());
         checkImage = new Image(getClass().getResourceAsStream("/images/check_icon.png"));
         xImage = new Image(getClass().getResourceAsStream("/images/x_icon.png"));
         arrowDownImage = new Image(getClass().getResourceAsStream("/images/arrow_down_icon.png"));
-
-        verifyPayment();
-
         messageLabel.setText("Insérez carte ou espèces");
 
         // Masquer l'image par défaut
         hideImage();
 
         // Afficher le prix transmis (si défini avant affichage)
-        setPrice(price);
+        
 
         // Masquer la monnaie restante
         hideMoneyLeft();
@@ -83,6 +78,8 @@ public class PaymentController {
 
     public void setCommandePayment(Commande commande) {
         this.commande = commande;
+        verifyPayment();
+        setPrice();
         System.out.println("paiment: " + commande.getPrix());
     }
 
@@ -92,26 +89,26 @@ public class PaymentController {
     }
 
     private void verifyPayment() {
-        setPrice(price);
+        setPrice();
         hideImage();
         messageLabel.setText("Insérez carte ou espèces");
         showButtons();
-        if (amount == price) {
+        if (amount == commande.getPrix()) {
             messageLabel.setText("Merci pour votre achat !");
             setImage(checkImage);
             hidePrice();
             hideButtons();
             redirectPageConfirmation();
-        } else if (amount > price) {
-            float overflow = amount - price;
+        } else if (amount > commande.getPrix()) {
+            float overflow = amount - commande.getPrix();
             messageLabel.setText(String.format("Récupérez votre monnaie"));
             showMoneyLeft(overflow);
             setImage(arrowDownImage);
             hidePrice();
             hideButtons();
             redirectPageRenduMonnaie(overflow);
-        } else if (amount < price) {
-            messageLabel.setText(String.format("Il manque encore : %.2f €", price - amount));
+        } else if (amount < commande.getPrix()) {
+            messageLabel.setText(String.format("Il manque encore : %.2f €", commande.getPrix() - amount));
         } else {
             messageLabel.setText(String.format("Opération échouée"));
             setImage(xImage);
@@ -154,8 +151,9 @@ public class PaymentController {
         checkIcon.setManaged(false);
     }
 
-    public void setPrice(float price) {
-        beveragePrice.setText(String.format("%.2f €", price));
+    public void setPrice() {
+        System.out.println("getPrice: " + commande);
+        beveragePrice.setText(String.format("%.2f €", commande.getPrix()));
         beveragePrice.setVisible(true);
         beveragePrice.setManaged(true);
     }
