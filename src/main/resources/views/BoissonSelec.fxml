@@ -8,14 +8,18 @@
 <?import javafx.scene.control.Slider?>
 <?import javafx.geometry.Insets?>
 
+
+
 <BorderPane xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.tsarbuck.tsarbucks.BoissonSelecController"
             stylesheets="@../css/style.css"
             prefWidth="405" prefHeight="798"
             styleClass="backgrounddore">
 
+    <!--Section pour afficher le logo  -->
     <top>
         <VBox alignment="CENTER">
+            <!--Mise en place de padding pour placer le logo -->
             <padding>
                 <Insets top="20" right="20" bottom="20" left="20" />
             </padding>
@@ -25,6 +29,7 @@
         </VBox>
     </top>
 
+    <!--Element centrale qui affiche la carte  -->
     <center>
         <VBox spacing="15" alignment="CENTER">
             <VBox styleClass="card" spacing="10" alignment="CENTER">
@@ -35,22 +40,39 @@
                     <Text styleClass="text">Caffé Capuccino</Text>
                 </HBox>
 
+                <!--contener pour afficher les bouton ajouter ou retirer -->
                 <HBox spacing="20" alignment="CENTER">
                     <Button fx:id="btnAjouter" text="Ajouter" styleClass="btn-round" />
                     <Button fx:id="btnRetirer" text="Retirer" styleClass="btn-round" />
                 </HBox>
-
+                <!-- Slider gradué pour le sucre -->
                 <Label fx:id="labelSucre" text="Sucre Ajouté :" styleClass="label" />
-                <Slider fx:id="sliderSucre" styleClass="slider-style" prefWidth="200"
-                        min="0" max="1" value="0.4" blockIncrement="0.1" />
+                <Slider fx:id="sliderSucre"
+                        styleClass="slider-style"
+                        min="0" max="3" value="1"
+                        blockIncrement="1"
+                        majorTickUnit="1"
+                        minorTickCount="0"
+                        snapToTicks="true"
+                        showTickMarks="true"
+                        showTickLabels="true" />
 
+                <!-- Slider gradué pour le lait -->
                 <Label fx:id="labelLait" text="Lait Ajouté :" styleClass="label" />
-                <Slider fx:id="sliderLait" styleClass="slider-style" prefWidth="200"
-                        min="0" max="1" value="0.6" blockIncrement="0.1" />
+                <Slider fx:id="sliderLait"
+                        styleClass="slider-style"
+                        min="0" max="3" value="1"
+                        blockIncrement="1"
+                        majorTickUnit="1"
+                        minorTickCount="0"
+                        snapToTicks="true"
+                        showTickMarks="true"
+                        showTickLabels="true" />
             </VBox>
         </VBox>
     </center>
 
+    <!--Footer qui affiche les bouton de navigation -->
     <bottom>
         <HBox alignment="CENTER" spacing="30">
             <padding>
