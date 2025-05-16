@@ -61,6 +61,10 @@
     -fx-font-weight: bold;
 }
 
+.slider-style .axis {
+    -fx-tick-label-fill: white;
+}
+
 .slider-style {
     -fx-pref-height: 10px;
 }

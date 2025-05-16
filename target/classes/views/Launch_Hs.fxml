@@ -13,6 +13,7 @@
             fx:controller="com.tsarbuck.tsarbucks.controllers.LaunchController"
             stylesheets="@../css/style.css">
 
+    <!--Affichage du logo au centre de la page  -->
     <center>
         <VBox alignment="CENTER" spacing="20.0">
             <Label>
