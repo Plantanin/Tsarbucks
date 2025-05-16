@@ -17,6 +17,7 @@ public class NavigationController {
     }
 
     public static void switchScene(String fxmlFile, MouseEvent event) {
+
         System.out.println(fxmlFile);
         Node source = (Node) event.getSource();
         Stage stage = (Stage) source.getScene().getWindow();

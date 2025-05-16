@@ -30,7 +30,7 @@
             <Pane style="-fx-background-color: #8B2222; -fx-background-radius: 0 0 10 10;" prefHeight="374" prefWidth="400">
                 <VBox alignment="CENTER" prefHeight="374" prefWidth="400">
                     <Label fx:id="messageLabel" text="Texte par défaut" style="-fx-font-size: 24px; -fx-text-fill: white;" wrapText="true" alignment="CENTER" textAlignment="CENTER" />
-                    <VBox fx:id="paymentButtons" visible="true" managed="true" alignment="CENTER" spacing="20" style="-fx-padding: 20">
+                    <VBox fx:id="paymentButtons" visible="true" managed="true" alignment="CENTER" spacing="20" style="-fx-padding: 0">
                         <Button fx:id="twoEurosButton" text="2€" minWidth="200"
                                 style="-fx-background-color: #D9A75F; -fx-background-radius: 30; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px;" />
                         <Button fx:id="oneEuroButton" text="1€" minWidth="200"
