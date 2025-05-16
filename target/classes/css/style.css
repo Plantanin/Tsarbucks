@@ -1,0 +1,86 @@
+.background{
+    -fx-background-color: #6C0C0A;
+}
+
+
+.text3{
+    -fx-font-size: 24px;
+    -fx-fill: #DC9F3E;
+}
+.text2{
+    -fx-font-size: 24px;
+    -fx-fill: #DC9F3E;
+}
+
+.backgrounddore {
+    -fx-background-color: #D49B3E;
+}
+
+.card {
+    -fx-background-color: #651F1C;
+    -fx-padding: 20;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-effect: dropshadow(gaussian, #3e0f0d, 10, 0.3, 3, 3);
+}
+
+.text {
+    -fx-fill: white;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.label {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+}
+
+.progress {
+    -fx-accent: #E6C471;
+    -fx-control-inner-background: #3e0f0d;
+    -fx-background-radius: 15;
+}
+
+.btn-round {
+    -fx-background-color: #E6C471;
+    -fx-text-fill: white;
+    -fx-background-radius: 30;
+    -fx-padding: 8 16;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-min-width: 100px;
+    -fx-wrap-text: true;
+    -fx-alignment: center;
+}
+
+.btn-red {
+    -fx-background-color: #651F1C;
+    -fx-text-fill: white;
+    -fx-background-radius: 30;
+    -fx-padding: 8 20;
+    -fx-font-weight: bold;
+}
+
+.slider-style {
+    -fx-pref-height: 10px;
+}
+
+.slider-style .track {
+    -fx-background-color: #FAD87A;
+    -fx-background-radius: 10;
+}
+
+.slider-style .thumb {
+    -fx-background-color: #DC9F3E;
+    -fx-background-radius: 10;
+    -fx-pref-width: 16;
+    -fx-pref-height: 16;
+}
+
+.header-text {
+    -fx-font-size: 24px;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 20 0 10 0;
+    -fx-alignment: center;
+}
