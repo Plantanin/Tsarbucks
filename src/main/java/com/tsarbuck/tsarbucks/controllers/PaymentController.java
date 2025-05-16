@@ -1,6 +1,7 @@
 package com.tsarbuck.tsarbucks.controllers;
 
 import com.tsarbuck.tsarbucks.models.Commande;
+import javafx.animation.PauseTransition;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -35,9 +36,6 @@ public class PaymentController {
     private Label beveragePrice;
 
     @FXML
-    private Commande commande;
-
-    @FXML
     private Label moneyLeft;
 
     // Prix fixe à payer
@@ -48,6 +46,7 @@ public class PaymentController {
     private Image checkImage;
     private Image xImage;
     private Image arrowDownImage;
+
 
     @FXML
     public void initialize() {
@@ -73,11 +72,6 @@ public class PaymentController {
 
         // Masquer la monnaie restante
         hideMoneyLeft();
-    }
-
-    public void setCommandePayment(Commande commande) {
-        this.commande = commande;
-        System.out.println("paiment: " + commande.getPrix());
     }
 
     private void ajouterMontant(float addedAmount) {
