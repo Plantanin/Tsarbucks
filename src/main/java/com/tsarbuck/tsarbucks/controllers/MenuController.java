@@ -6,12 +6,13 @@ import com.tsarbuck.tsarbucks.models.Taille;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
-import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.scene.Parent;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -19,6 +20,7 @@ public class MenuController {
 
     private Boisson expresso;
     private Boisson latte;
+    private Boisson cappuccino;
     private Commande commande;
 
 
@@ -65,12 +67,15 @@ public class MenuController {
     private Label labelLaitBoisson;
 
 
-    private void showBoissonSelection(String nomBoisson) {
+    private void showBoissonSelection(String nomBoisson, Commande commande) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/ChoixBoisson.fxml"));
             //loader.setController(this);
 
             Parent root = loader.load();
+
+            BoissonSelectController controller = loader.getController();
+            controller.setCommande(commande);
 
             // Récupère les quantités actuelles
 //            int sucre = (int) sliderSucre.getValue();
@@ -95,36 +100,78 @@ public class MenuController {
     private void initialize() {
         expresso = new Boisson("expresso", 10, 15);
         latte = new Boisson("latte", 11, 14);
+        cappuccino = new Boisson("cappuccino", 12, 15);
     }
 
 
     @FXML
-    private void handleAjouterEspresso(ActionEvent event) {
-        showBoissonSelection("Espresso");
+    private void handleAjouterExpresso(ActionEvent event) {
         commande = new Commande(expresso);
-        System.out.println(this.commande);
-        goToNextScene(event);
+
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/BoissonSelec.fxml"));
+            Parent root = loader.load();
+
+            // ✅ Récupération du contrôleur et passage de la commande
+            BoissonSelectController controller = loader.getController();
+            controller.setCommande(commande);
+
+            System.out.println(commande);
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root, 400, 700));
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     private void handleAjouterLatte(ActionEvent event) {
         //NavigationController.switchScene("BoissonSelec.fxml", event);
-        showBoissonSelection("Latte");
         commande = new Commande(latte);
-        System.out.println(commande);
-        goToNextScene(event);
+
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/BoissonSelec.fxml"));
+            Parent root = loader.load();
+
+            // ✅ Récupération du contrôleur et passage de la commande
+            BoissonSelectController controller = loader.getController();
+            controller.setCommande(commande);
+
+            System.out.println(commande);
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root, 400, 700));
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     private void handleAjouterCappuccino(ActionEvent event) {
-        showBoissonSelection("Cappuccino");
-        goToNextScene(event);
-    }
+        commande = new Commande(cappuccino);
 
-    @FXML
-    private void setCommandeTailleM() {
-        commande.setTaille(Taille.MOYEN);
-        System.out.println(commande);
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/BoissonSelec.fxml"));
+            Parent root = loader.load();
+
+            // ✅ Récupération du contrôleur et passage de la commande
+            BoissonSelectController controller = loader.getController();
+            controller.setCommande(commande);
+
+            System.out.println(commande);
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root, 400, 700));
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -132,4 +179,17 @@ public class MenuController {
         NavigationController.switchScene("BoissonSelec.fxml", event);
     }
 
+    @FXML
+    private void goToLaunch(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/Launch_Hs.fxml"));
+            Parent root = loader.load();
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root, 400, 700));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

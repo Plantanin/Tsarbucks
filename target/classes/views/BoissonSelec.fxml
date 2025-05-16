@@ -9,7 +9,7 @@
 <?import javafx.geometry.Insets?>
 
 <BorderPane xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.tsarbuck.tsarbucks.controllers.MenuController"
+            fx:controller="com.tsarbuck.tsarbucks.controllers.BoissonSelectController"
 
             stylesheets="@../css/style.css"
             prefWidth="405" prefHeight="798"
@@ -38,6 +38,7 @@
 
                 <HBox spacing="20" alignment="CENTER">
                     <Button fx:id="btnTailleM" text="M" styleClass="btn-round" onAction="#setCommandeTailleM"/>
+                    <Button fx:id="btnTailleL" text="L" styleClass="btn-round" onAction="#setCommandeTailleL"/>
                 </HBox>
 
                 <Label fx:id="labelSucreBoisson" text="Sucre Ajouté :" styleClass="label" />
@@ -56,8 +57,8 @@
             <padding>
                 <Insets top="20" right="20" bottom="20" left="20" />
             </padding>
-            <Button fx:id="btnRetour" text="Retour" styleClass="btn-red" />
-            <Button fx:id="btnConfirmer" text="Confirmer" styleClass="btn-red" />
+            <Button fx:id="btnRetour" text="Retour" styleClass="btn-red" onAction="#goToPreviousScene" />
+            <Button fx:id="btnConfirmer" text="Confirmer" styleClass="btn-red" onAction="#goToNextScene" />
         </HBox>
     </bottom>
 
