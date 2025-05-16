@@ -41,6 +41,8 @@
                                 style="-fx-background-color: #D9A75F; -fx-background-radius: 30; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px;" />
                         <Button fx:id="cardPaymentBtn" text="Payer par carte" minWidth="200"
                                 style="-fx-background-color: #D9A75F; -fx-background-radius: 30; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px;" />
+                        <Button fx:id="cardPaymentFailedBtn" text="Payer par carte EXPIREE" minWidth="200"
+                                style="-fx-background-color: #D9A75F; -fx-background-radius: 30; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16px;" />
                     </VBox>
                 </VBox>
             </Pane>
