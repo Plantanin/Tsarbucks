@@ -8,6 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
+import javafx.util.Duration;
 
 public class PaymentController {
 
@@ -17,6 +18,8 @@ public class PaymentController {
 
     @FXML
     private Button cardPaymentBtn;
+    @FXML
+    private Button cardPaymentFailedBtn;
     @FXML
     private Button twoEurosButton;
     @FXML
@@ -34,6 +37,9 @@ public class PaymentController {
 
     @FXML
     private Label beveragePrice;
+
+    @FXML
+    private Commande commande;
 
     @FXML
     private Label moneyLeft;
@@ -56,6 +62,7 @@ public class PaymentController {
         fiftyCentsButton.setOnAction(event -> ajouterMontant(0.5F));
         tenCentsButton.setOnAction(event -> ajouterMontant(0.1F));
         cardPaymentBtn.setOnAction(event -> ajouterMontant(price));
+        cardPaymentFailedBtn.setOnAction(event -> failedPayment());
         checkImage = new Image(getClass().getResourceAsStream("/images/check_icon.png"));
         xImage = new Image(getClass().getResourceAsStream("/images/x_icon.png"));
         arrowDownImage = new Image(getClass().getResourceAsStream("/images/arrow_down_icon.png"));
@@ -74,12 +81,21 @@ public class PaymentController {
         hideMoneyLeft();
     }
 
+    public void setCommandePayment(Commande commande) {
+        this.commande = commande;
+        System.out.println("paiment: " + commande.getPrix());
+    }
+
     private void ajouterMontant(float addedAmount) {
         amount += addedAmount;
         verifyPayment();
     }
 
     private void verifyPayment() {
+        setPrice(price);
+        hideImage();
+        messageLabel.setText("Insérez carte ou espèces");
+        showButtons();
         if (amount == price) {
             messageLabel.setText("Merci pour votre achat !");
             setImage(checkImage);
@@ -102,6 +118,18 @@ public class PaymentController {
             hideButtons();
             hidePrice();
         }
+    }
+
+    public void failedPayment() {
+        messageLabel.setText("Opération échouée");
+        setImage(xImage);
+        hidePrice();
+        hideButtons();
+
+        // Attendre 5 secondes puis relancer verifyPayment
+        PauseTransition pause = new PauseTransition(Duration.seconds(5));
+        pause.setOnFinished(event -> verifyPayment());
+        pause.play();
     }
 
     private void redirectPageConfirmation() {
@@ -146,6 +174,11 @@ public class PaymentController {
     public void hideMoneyLeft() {
         moneyLeft.setVisible(false);
         moneyLeft.setManaged(false);
+    }
+
+    public void showButtons() {
+        paymentButtons.setVisible(true);
+        paymentButtons.setManaged(true);
     }
 
     public void hideButtons() {
